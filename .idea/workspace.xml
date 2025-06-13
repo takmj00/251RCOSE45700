@@ -1,58 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d80d28c-7878-42ed-a56f-f35856ac98b2" name="변경" comment="initialize Java project with main class and configuration files">
-      <change afterPath="$PROJECT_DIR$/../.idea/251RCOSE45700.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/251RCOSE45700.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="4e0bf908-7a89-47ee-9d64-8c963df2858d" name="Changes" comment="feat: 변수 명 통일" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "takmj00"
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;takmj00&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/takmj00/251RCOSE45700.git",
-    "accountId": "ab148d69-4287-442a-9941-26ef3b4f426f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/YunJaeHoon/251RCOSE45700.git&quot;,
+    &quot;accountId&quot;: &quot;ab148d69-4287-442a-9941-26ef3b4f426f&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
-  <component name="ProjectId" id="2yQvye36fkhBtWwecaoARKnB8sd" />
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2vChQgBkLrqhAzLXyl7CYObnZ2x" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/TAK/Desktop/2025 4-1/실전SW프로젝트/mine/251RCOSE45700",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/TAK/Desktop/2025 4-1/실전SW프로젝트/mine/251RCOSE45700/251RCOSE45700/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true",
+    "애플리케이션.Main.executor": "Run"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="panel.properties" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="251RCOSE45700" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="애플리케이션.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -61,34 +95,233 @@
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="6d80d28c-7878-42ed-a56f-f35856ac98b2" name="변경" comment="" />
-      <created>1749779870724</created>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e0bf908-7a89-47ee-9d64-8c963df2858d" name="Changes" comment="" />
+      <created>1743654948373</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1749779870724</updated>
-      <workItem from="1749779872443" duration="80000" />
+      <updated>1743654948373</updated>
+      <workItem from="1743658139606" duration="404000" />
+      <workItem from="1743658577927" duration="5466000" />
+      <workItem from="1744020476558" duration="541000" />
+      <workItem from="1744097525089" duration="176000" />
+      <workItem from="1744258542921" duration="477000" />
+      <workItem from="1744638379568" duration="24937000" />
+      <workItem from="1744720258920" duration="1571000" />
+      <workItem from="1744761464007" duration="11820000" />
+      <workItem from="1744817838243" duration="36158000" />
+      <workItem from="1744961336795" duration="1000" />
+      <workItem from="1746682095385" duration="1417000" />
+      <workItem from="1746759282641" duration="17196000" />
+      <workItem from="1747145021172" duration="7128000" />
+      <workItem from="1747282578290" duration="1206000" />
+      <workItem from="1747376572721" duration="1040000" />
+      <workItem from="1747639077790" duration="139000" />
+      <workItem from="1747726240309" duration="52000" />
+      <workItem from="1747888124789" duration="2270000" />
+      <workItem from="1747965422487" duration="1221000" />
+      <workItem from="1748048129044" duration="1374000" />
+      <workItem from="1749498173852" duration="13380000" />
+      <workItem from="1749536521791" duration="45000" />
+      <workItem from="1749569146675" duration="820000" />
+      <workItem from="1749600376822" duration="1245000" />
+      <workItem from="1749779761872" duration="227000" />
     </task>
+    <task id="LOCAL-00001" summary="Rename: ToolSelection -&gt; ColorSelection">
+      <option name="closed" value="true" />
+      <created>1744693833128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744693833128</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: PropertyPanel 생성, 이를 통한 속성 수정 기능 구현">
+      <option name="closed" value="true" />
+      <created>1744935961832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744935961832</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: Select모드일 때 ColorPanel을 통한 색상 수정 기능">
+      <option name="closed" value="true" />
+      <created>1744936334263</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744936334263</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: Select모드일 때 드래그를 통한 움직임, 속성창 즉시 반영 기능">
+      <option name="closed" value="true" />
+      <created>1744937680839</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744937680839</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: 다중 선택 기능, 동시이동, 동시속성 적용 기능">
+      <option name="closed" value="true" />
+      <created>1744943549265</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744943549265</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: z-order 맨 앞으로, 맨 뒤로 기능">
+      <option name="closed" value="true" />
+      <created>1744944977989</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744944977989</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Design: PropertyPanel 속성들 3줄로 정렬">
+      <option name="closed" value="true" />
+      <created>1744951757612</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744951757612</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: MainFrame에서 알맞은 메소드 명 호출">
+      <option name="closed" value="true" />
+      <created>1744951995207</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744951995207</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: 속성 값 입력 후 엔터를 눌렀을 경우만 반영되게 수정">
+      <option name="closed" value="true" />
+      <created>1744952387404</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744952387404</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: Select모드일 때 드래그를 통한 단일 크기 조절 기능">
+      <option name="closed" value="true" />
+      <created>1744955255468</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744955255468</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: Update mouse event handlers to include CanvasPanel parameter and implement text editing functionality">
+      <option name="closed" value="true" />
+      <created>1747145366620</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747145366620</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: Text mode일 때, 드래깅 시 박스 보이는 기능">
+      <option name="closed" value="true" />
+      <created>1747146418755</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747146418755</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: Select mode일 때, Text component 내부 textContent 수정 기능 구현">
+      <option name="closed" value="true" />
+      <created>1747152041520</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747152041520</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: Composite class 생성">
+      <option name="closed" value="true" />
+      <created>1749499294995</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749499294995</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: Composite에 따른 CanvasPanel 수정">
+      <option name="closed" value="true" />
+      <created>1749508796216</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1749508796216</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: Composite에 따른 PropertyPanel 수정">
+      <option name="closed" value="true" />
+      <created>1749514530187</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1749514530187</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: Composite에 따른 SelectEventHandler 수정">
+      <option name="closed" value="true" />
+      <created>1749514576795</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1749514576795</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: 변수 명 통일">
+      <option name="closed" value="true" />
+      <created>1749514927227</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1749514927227</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="initialize Java project with main class and configuration files" />
-    <option name="LAST_COMMIT_MESSAGE" value="initialize Java project with main class and configuration files" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Rename: ToolSelection -&gt; ColorSelection" />
+    <MESSAGE value="feat: PropertyPanel 생성, 이를 통한 속성 수정 기능 구현" />
+    <MESSAGE value="feat: Select모드일 때 ColorPanel을 통한 색상 수정 기능" />
+    <MESSAGE value="feat: Select모드일 때 드래그를 통한 움직임, 속성창 즉시 반영 기능" />
+    <MESSAGE value="feat: 다중 선택 기능, 동시이동, 동시속성 적용 기능" />
+    <MESSAGE value="feat: z-order 맨 앞으로, 맨 뒤로 기능" />
+    <MESSAGE value="Design: PropertyPanel 속성들 3줄로 정렬" />
+    <MESSAGE value="fix: MainFrame에서 알맞은 메소드 명 호출" />
+    <MESSAGE value="fix: 속성 값 입력 후 엔터를 눌렀을 경우만 반영되게 수정" />
+    <MESSAGE value="feat: Select모드일 때 드래그를 통한 단일 크기 조절 기능" />
+    <MESSAGE value="feat: Update mouse event handlers to include CanvasPanel parameter and implement text editing functionality" />
+    <MESSAGE value="feat: Text mode일 때, 드래깅 시 박스 보이는 기능" />
+    <MESSAGE value="ver: 중간 발표 버전" />
+    <MESSAGE value="feat: Select mode일 때, Text component 내부 textContent 수정 기능 구현" />
+    <MESSAGE value="feat: Composite class 생성" />
+    <MESSAGE value="feat: Composite에 따른 CanvasPanel 수정" />
+    <MESSAGE value="feat: Composite에 따른 PropertyPanel 수정" />
+    <MESSAGE value="feat: Composite에 따른 SelectEventHandler 수정" />
+    <MESSAGE value="feat: 변수 명 통일" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 변수 명 통일" />
   </component>
 </project>
