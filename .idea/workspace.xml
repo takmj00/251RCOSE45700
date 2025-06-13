@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e0bf908-7a89-47ee-9d64-8c963df2858d" name="Changes" comment="feat: 변수 명 통일" />
+    <list default="true" id="4e0bf908-7a89-47ee-9d64-8c963df2858d" name="Changes" comment="refactor: update .gitignore and Main class for improved structure and clarity">
+      <change beforePath="$PROJECT_DIR$/src/command/BringToFrontCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ChangeBlueCodeCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ChangeGreenCodeCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ChangeHeightCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ChangeRedCodeCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ChangeWidthCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ChangeXCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ChangeYCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/MouseDraggedCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/MousePressedCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/MouseReleasedCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/SelectColorCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/SelectToolCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/SendToBackCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Composite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frame/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frame/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panel/canvas/CanvasPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panel/canvas/CanvasPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panel/canvas/ComponentSelectionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panel/canvas/ComponentSelectionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panel/color/ColorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panel/color/ColorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panel/property/ChangeComponentPropertyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panel/property/ChangeComponentPropertyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panel/property/PropertyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panel/property/PropertyPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panel/toolbar/ToolbarPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panel/toolbar/ToolbarPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/EllipseEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/EllipseEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/LineEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/LineEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/RectangleEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/RectangleEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/SelectEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/SelectEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/TextEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/TextEventHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,12 +62,12 @@
     &quot;assignee&quot;: &quot;takmj00&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/YunJaeHoon/251RCOSE45700.git&quot;,
-    &quot;accountId&quot;: &quot;ab148d69-4287-442a-9941-26ef3b4f426f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/takmj00/251RCOSE45700.git",
+    "accountId": "ab148d69-4287-442a-9941-26ef3b4f426f"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -49,25 +79,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/TAK/Desktop/2025 4-1/실전SW프로젝트/mine/251RCOSE45700",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true",
-    "애플리케이션.Main.executor": "Run"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/TAK/Desktop/2025 4-1/실전SW프로젝트/mine/251RCOSE45700&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;애플리케이션.Main.executor&quot;: &quot;Run&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="panel.properties" />
@@ -128,6 +158,7 @@
       <workItem from="1749569146675" duration="820000" />
       <workItem from="1749600376822" duration="1245000" />
       <workItem from="1749779761872" duration="227000" />
+      <workItem from="1749782207333" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="Rename: ToolSelection -&gt; ColorSelection">
       <option name="closed" value="true" />
@@ -273,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749514927227</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="refactor: update .gitignore and Main class for improved structure and clarity">
+      <option name="closed" value="true" />
+      <created>1749782306853</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1749782306854</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +361,7 @@
     <MESSAGE value="feat: Composite에 따른 PropertyPanel 수정" />
     <MESSAGE value="feat: Composite에 따른 SelectEventHandler 수정" />
     <MESSAGE value="feat: 변수 명 통일" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 변수 명 통일" />
+    <MESSAGE value="refactor: update .gitignore and Main class for improved structure and clarity" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: update .gitignore and Main class for improved structure and clarity" />
   </component>
 </project>
