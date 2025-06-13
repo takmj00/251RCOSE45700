@@ -12,7 +12,7 @@ public class EllipseEventHandler implements ToolEventHandler
     private Ellipse ellipse;
 
     // 싱글톤
-    public static EllipseEventHandler getInstance() { return SingleInstanceHolder.INSTANCE; }
+    public static EllipseEventHandler getInstance() { return EllipseEventHandler.SingleInstanceHolder.INSTANCE; }
     private static class SingleInstanceHolder { private static final EllipseEventHandler INSTANCE = new EllipseEventHandler(); }
     private EllipseEventHandler() {}
 

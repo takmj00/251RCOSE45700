@@ -12,7 +12,7 @@ public class TextEventHandler implements ToolEventHandler
     private Text text;
 
     // 싱글톤
-    public static TextEventHandler getInstance() { return SingleInstanceHolder.INSTANCE; }
+    public static TextEventHandler getInstance() { return TextEventHandler.SingleInstanceHolder.INSTANCE; }
     private static class SingleInstanceHolder { private static final TextEventHandler INSTANCE = new TextEventHandler(); }
     private TextEventHandler() {}
 

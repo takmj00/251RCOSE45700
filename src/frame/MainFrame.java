@@ -16,7 +16,7 @@ public class MainFrame extends JFrame
 	PropertyPanel propertyPanel;	// 속성 패널
 
 	// 싱글톤
-	public static MainFrame getInstance() { return SingleInstanceHolder.INSTANCE; }
+	public static MainFrame getInstance() { return MainFrame.SingleInstanceHolder.INSTANCE; }
 	private static class SingleInstanceHolder { private static final MainFrame INSTANCE = new MainFrame(); }
 
 	// 생성자

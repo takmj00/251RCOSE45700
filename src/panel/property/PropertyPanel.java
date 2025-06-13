@@ -1,8 +1,7 @@
 package panel.property;
 
-import command.*;
-import component.Composite;
 import panel.canvas.ComponentSelectionListener;
+import panel.color.ColorPanel;
 import panel.color.ColorSelectionListener;
 import component.Component;
 
@@ -14,7 +13,7 @@ import java.util.List;
 public class PropertyPanel extends JPanel implements ComponentSelectionListener, ColorSelectionListener
 {
 	// 현재 선택한 컴포넌트 리스트
-	private Composite selectedComposite = new Composite();
+	private List<Component> selectedComponents = new ArrayList<>();
 	
 	private final JTextField xField = new JTextField(5);
 	private final JTextField yField = new JTextField(5);
@@ -28,7 +27,7 @@ public class PropertyPanel extends JPanel implements ComponentSelectionListener,
 	private final List<ChangeComponentPropertyListener> changeComponentPropertyListeners = new ArrayList<>();
 
 	// 싱글톤
-	public static PropertyPanel getInstance() { return SingleInstanceHolder.INSTANCE; }
+	public static PropertyPanel getInstance() { return PropertyPanel.SingleInstanceHolder.INSTANCE; }
 	private static class SingleInstanceHolder { private static final PropertyPanel INSTANCE = new PropertyPanel(); }
 
 	// 생성자
@@ -105,126 +104,117 @@ public class PropertyPanel extends JPanel implements ComponentSelectionListener,
 		add(new JPanel(), gbc);
 		
 		// 각 필드에 엔터키 입력 시 액션 리스너 추가
-		xField.addActionListener(e -> {
-			Command command = new ChangeXCommand(Integer.parseInt(xField.getText()));
-			command.execute();
-		});
-		yField.addActionListener(e -> {
-			Command command = new ChangeYCommand(Integer.parseInt(yField.getText()));
-			command.execute();
-		});
-		widthField.addActionListener(e -> {
-			Command command = new ChangeWidthCommand(Integer.parseInt(widthField.getText()));
-			command.execute();
-		});
-		heightField.addActionListener(e ->{
-			Command command = new ChangeHeightCommand(Integer.parseInt(heightField.getText()));
-			command.execute();
-		});
-		redField.addActionListener(e -> {
-			Command command = new ChangeRedCodeCommand(Integer.parseInt(redField.getText()));
-			command.execute();
-		});
-		greenField.addActionListener(e -> {
-			Command command = new ChangeGreenCodeCommand(Integer.parseInt(greenField.getText()));
-			command.execute();
-		});
-		blueField.addActionListener(e -> {
-			Command command = new ChangeBlueCodeCommand(Integer.parseInt(blueField.getText()));
-			command.execute();
-		});
+		xField.addActionListener(e -> changeX());
+		yField.addActionListener(e -> changeY());
+		widthField.addActionListener(e -> changeWidth());
+		heightField.addActionListener(e -> changeHeight());
+		redField.addActionListener(e -> changeRedCode());
+		greenField.addActionListener(e -> changeGreenCode());
+		blueField.addActionListener(e -> changeBlueCode());
 		
 		// 선택한 컴포넌트를 제일 앞으로 보내는 버튼 액션 리스너 추가 (내부 순서 유지)
 		bringToFrontButton.addActionListener(e -> {
-			Command command = new BringToFrontCommand();
-			command.execute();
+			for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
+				listener.bringToFront();
+			}
 		});
 		
 		// 선택한 컴포넌트를 제일 뒤로 보내는 버튼 액션 리스너 추가 (내부 순서 유지)
 		sendToBackButton.addActionListener(e -> {
-			Command command = new SendToBackCommand();
-			command.execute();
+			for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
+				listener.bringToBack();
+			}
 		});
 	}
 	
 	// 선택한 컴포넌트의 x 좌표 변경 메서드
-	public void changeX(int x)
+	private void changeX()
 	{
-		// 리스너 알림
+		// 속성값이 비어있으면 무시
+		if(xField.getText().isEmpty()) {
+			return;
+		}
+		
 		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.changeX(x);
+			listener.changeX(Integer.parseInt(xField.getText()));
 		}
 	}
 	
 	// 선택한 컴포넌트의 y 좌표 변경 메서드
-	public void changeY(int y)
+	private void changeY()
 	{
-		// 리스너 알림
+		// 속성값이 비어있으면 무시
+		if(yField.getText().isEmpty()) {
+			return;
+		}
+		
 		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.changeY(y);
+			listener.changeY(Integer.parseInt(yField.getText()));
 		}
 	}
 	
 	// 선택한 컴포넌트의 width 변경 메서드
-	public void changeWidth(int width)
+	private void changeWidth()
 	{
-		// 리스너 알림
+		// 속성값이 비어있으면 무시
+		if(widthField.getText().isEmpty()) {
+			return;
+		}
+		
 		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.changeWidth(width);
+			listener.changeWidth(Integer.parseInt(widthField.getText()));
 		}
 	}
 	
 	// 선택한 컴포넌트의 height 변경 메서드
-	public void changeHeight(int height)
+	private void changeHeight()
 	{
-		// 리스너 알림
+		// 속성값이 비어있으면 무시
+		if(heightField.getText().isEmpty()) {
+			return;
+		}
+		
 		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.changeHeight(height);
+			listener.changeHeight(Integer.parseInt(heightField.getText()));
 		}
 	}
 	
-	// 선택한 컴포넌트의 red 코드 변경 메서드
-	public void changeRedCode(int redCode)
+	// 선택한 컴포넌트의 red 코드 메서드
+	private void changeRedCode()
 	{
-		// 리스너 알림
+		// 속성값이 비어있으면 무시
+		if(redField.getText().isEmpty()) {
+			return;
+		}
+		
 		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.changeRedCode(redCode);
+			listener.changeRedCode(Integer.parseInt(redField.getText()));
 		}
 	}
 	
-	// 선택한 컴포넌트의 green 코드 변경 메서드
-	public void changeGreenCode(int greenCode)
+	// 선택한 컴포넌트의 green 코드 메서드
+	private void changeGreenCode()
 	{
-		// 리스너 알림
+		// 속성값이 비어있으면 무시
+		if(greenField.getText().isEmpty()) {
+			return;
+		}
+		
 		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.changeGreenCode(greenCode);
+			listener.changeGreenCode(Integer.parseInt(greenField.getText()));
 		}
 	}
 	
-	// 선택한 컴포넌트의 blue 코드 변경 메서드
-	public void changeBlueCode(int blueCode)
+	// 선택한 컴포넌트의 blue 코드 메서드
+	private void changeBlueCode()
 	{
-		// 리스너 알림
-		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.changeBlueCode(blueCode);
+		// 속성값이 비어있으면 무시
+		if(blueField.getText().isEmpty()) {
+			return;
 		}
-	}
-
-	// 선택한 컴포넌트를 맨 앞으로 이동 메서드
-	public void bringToFront()
-	{
-		// 리스너 알림
+		
 		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.bringToFront();
-		}
-	}
-
-	// 선택한 컴포넌트를 맨 뒤로 이동 메서드
-	public void sendToBack()
-	{
-		// 리스너 알림
-		for(ChangeComponentPropertyListener listener : changeComponentPropertyListeners) {
-			listener.sendToBack();
+			listener.changeBlueCode(Integer.parseInt(blueField.getText()));
 		}
 	}
 	
@@ -235,8 +225,8 @@ public class PropertyPanel extends JPanel implements ComponentSelectionListener,
 	
 	// 선택한 컴포넌트 리스트 설정
 	@Override
-	public void selectComponents(Composite composite) {
-		selectedComposite = composite;
+	public void selectComponents(List<Component> components) {
+		selectedComponents = components;
 	}
 	
 	// 속성 출력
@@ -244,18 +234,18 @@ public class PropertyPanel extends JPanel implements ComponentSelectionListener,
 	public void displayProperty()
 	{
 		// 선택된 컴포넌트가 없다면, 무시
-		if(selectedComposite.isEmpty()) {
+		if(selectedComponents.isEmpty()) {
 			return;
 		}
 		
 		// 선택된 컴포넌트가 2개 이상이면, 속성을 출력하지 않음
-		if (selectedComposite.size() > 1) {
+		if (selectedComponents.size() > 1) {
 			clearProperties();
 			return;
 		}
 		
 		// 속성 출력
-		Component component = selectedComposite.get(0);
+		Component component = selectedComponents.getFirst();
 		xField.setText(String.valueOf(Math.min(component.getStartX(), component.getEndX())));
 		yField.setText(String.valueOf(Math.min(component.getStartY(), component.getEndY())));
 		widthField.setText(String.valueOf(component.getWidth()));

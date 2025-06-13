@@ -1,13 +1,9 @@
 package panel.canvas;
 
-import command.Command;
-import command.MouseDraggedCommand;
-import command.MousePressedCommand;
-import command.MouseReleasedCommand;
+import frame.MainFrame;
 import panel.color.ColorSelectionListener;
 import panel.property.ChangeComponentPropertyListener;
 import component.Component;
-import component.Composite;
 import tool.ToolMode;
 import panel.toolbar.ToolSelectionListener;
 
@@ -16,15 +12,13 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
 
 public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorSelectionListener, ChangeComponentPropertyListener, MouseListener, MouseMotionListener
 {
-	private final Composite composite = new Composite();            // 지금까지 그려진 컴포넌트 리스트
-	private final Composite selectedComposite = new Composite();		// 현재 선택한 컴포넌트 리스트
+	private final List<Component> components = new ArrayList<>();				// 지금까지 그려진 컴포넌트 리스트
+	private final List<Component> selectedComponents = new ArrayList<>();		// 현재 선택한 컴포넌트 리스트
 
 	private ToolMode currentToolMode;		// 현재 도구 모드
 	private final JLabel currentToolLabel;	// 현재 도구를 표시하는 레이블
@@ -33,15 +27,11 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 	// 컴포넌트 선택 이벤트 리스너 리스트
 	private final List<ComponentSelectionListener> componentSelectionListeners = new ArrayList<>();
 
-	// 커맨드 기록
-	private final Deque<Command> commandHistory = new ArrayDeque<>();
-
 	// 싱글톤
-	public static CanvasPanel getInstance() { return SingleInstanceHolder.INSTANCE; }
+	public static CanvasPanel getInstance() { return CanvasPanel.SingleInstanceHolder.INSTANCE; }
 	private static class SingleInstanceHolder { private static final CanvasPanel INSTANCE = new CanvasPanel(); }
 
-	/// 생성자
-
+	// 생성자
 	private CanvasPanel()
 	{
 		// 수동 배치 사용
@@ -64,48 +54,51 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 		add(currentToolLabel);
 	}
 
-	/// Getter
-
 	// 컴포넌트 리스트 얻기
-	public Composite getComponentList() {
-		return composite;
+	public List<Component> getComponentList() {
+		return components;
 	}
 
 	// 선택된 컴포넌트 리스트 얻기
-	public Composite getSelectedComponentList() {
-		return selectedComposite;
+	public List<Component> getSelectedComponentList() {
+		return selectedComponents;
 	}
-
-	/// 컴포넌트 선택 이벤트 관리
 	
 	// 컴포넌트 선택 이벤트 리스너 추가 메서드
 	public void addComponentSelectionListener(ComponentSelectionListener listener) {
 		componentSelectionListeners.add(listener);
-		listener.selectComponents(selectedComposite);
+		listener.selectComponents(selectedComponents);
 	}
 	
 	// 등록된 모든 리스너에게 컴포넌트 속성 출력 이벤트 알림
-	public void notifyDisplayProperty()
-	{
-		// 리스너 알림
+	public void notifyDisplayProperty() {
 		for(ComponentSelectionListener listener : componentSelectionListeners) {
 			listener.displayProperty();
 		}
 	}
-
-	/// 속성 변경 이벤트 처리
 	
 	// 선택한 컴포넌트의 x 좌표 변경
 	@Override
 	public void changeX(int x) {
-		selectedComposite.changeX(x);
+		for (Component component : selectedComponents) {
+			int width = component.getWidth();
+			
+			component.setStartX(x);
+			component.setEndX(width + x);
+		}
+		
 		repaint();
 	}
 	
 	// 선택한 컴포넌트의 y 좌표 변경
 	@Override
 	public void changeY(int y) {
-		selectedComposite.changeY(y);
+		for (Component component : selectedComponents) {
+			int height = component.getHeight();
+			
+			component.setStartY(y);
+			component.setEndY(y + height);
+		}
 		
 		repaint();
 	}
@@ -113,7 +106,9 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 	// 선택한 컴포넌트의 width 변경
 	@Override
 	public void changeWidth(int width) {
-		selectedComposite.setWidth(width);
+		for (Component component : selectedComponents) {
+			component.setWidth(width);
+		}
 		
 		repaint();
 	}
@@ -121,7 +116,9 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 	// 선택한 컴포넌트의 height 변경
 	@Override
 	public void changeHeight(int height) {
-		selectedComposite.setHeight(height);
+		for (Component component : selectedComponents) {
+			component.setHeight(height);
+		}
 		
 		repaint();
 	}
@@ -129,7 +126,9 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 	// 선택한 컴포넌트의 red 코드 변경
 	@Override
 	public void changeRedCode(int redCode) {
-		selectedComposite.setRedCode(redCode);
+		for (Component component : selectedComponents) {
+			component.setRedCode(redCode);
+		}
 		
 		repaint();
 	}
@@ -137,7 +136,9 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 	// 선택한 컴포넌트의 green 코드 변경
 	@Override
 	public void changeGreenCode(int greenCode) {
-		selectedComposite.setGreenCode(greenCode);
+		for (Component component : selectedComponents) {
+			component.setGreenCode(greenCode);
+		}
 		
 		repaint();
 	}
@@ -145,7 +146,9 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 	// 선택한 컴포넌트의 blue 코드 변경
 	@Override
 	public void changeBlueCode(int blueCode) {
-		selectedComposite.setBlueCode(blueCode);
+		for (Component component : selectedComponents) {
+			component.setBlueCode(blueCode);
+		}
 		
 		repaint();
 	}
@@ -153,30 +156,24 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 	// 선택한 컴포넌트를 제일 앞으로 (내부 순서 유지)
 	@Override
 	public void bringToFront() {
-		List<Component> selected = selectedComposite.getChildren();
-		for (Component component : selected) {
-			composite.remove(component);
+		for (Component component : selectedComponents) {
+			components.remove(component);
 		}
-		for (Component component : selected) {
-			composite.add(component);
-		}
+		components.addAll(selectedComponents);
+		
 		repaint();
 	}
 	
 	// 선택한 컴포넌트를 제일 뒤로 (내부 순서 유지)
 	@Override
-	public void sendToBack() {
-		List<Component> selected = selectedComposite.getChildren();
-		for (Component component : selected) {
-			composite.remove(component);
+	public void bringToBack() {
+		for (Component component : selectedComponents) {
+			components.remove(component);
 		}
-		for (Component component : selected) {
-			composite.add(0, component);
-		}
+		components.addAll(0, selectedComponents);
+		
 		repaint();
 	}
-
-	/// 도구 선택 이벤트 처리
 	
 	// 도구 선택 이벤트 처리 메서드
 	@Override
@@ -187,7 +184,7 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 			return;
 		
 		// 전체 컴포넌트 선택 취소
-		selectedComposite.clear();
+		selectedComponents.clear();
 		
 		// 현재 도구 변경
 		currentToolMode = selectedTool;
@@ -195,8 +192,6 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 		
 		repaint();
 	}
-
-	/// 색상 선택 이벤트 처리
 	
 	// 색상 선택 이벤트 처리 메서드
 	@Override
@@ -210,70 +205,60 @@ public class CanvasPanel extends JPanel implements ToolSelectionListener, ColorS
 		currentColor = color;
 		
 		// 선택한 컴포넌트 색상 변경
-		selectedComposite.setColor(color);
+		for (Component component : selectedComponents) {
+			component.setColor(color);
+		}
 		
 		repaint();
 	}
 	
-	/// 마우스 버튼을 눌렀을 때, 이벤트 처리 메서드
-
+	// 마우스 버튼을 눌렀을 때, 이벤트 처리 메서드
 	@Override
 	public void mousePressed(MouseEvent e)
 	{
-		Command command = new MousePressedCommand(e);
-		command.execute();
+		// 캔버스 영역 클릭 시 포커스를 캔버스 패널로 이동하여 JTextArea가 focusLost 이벤트를 발생하게 함
+		requestFocusInWindow();
+
+		// 모드에 따른 동작 수행
+		currentToolMode.getToolEventHandler().onMousePressed(this, e, currentColor);
+		repaint();
 	}
 	
-	/// 마우스 버튼을 누른채로 드래그했을 때, 이벤트 처리 메서드
-
+	// 마우스 버튼을 누른채로 드래그했을 때, 이벤트 처리 메서드
 	@Override
 	public void mouseDragged(MouseEvent e)
 	{
-		Command command = new MouseDraggedCommand(e);
-		command.execute();
+		currentToolMode.getToolEventHandler().onMouseDragged(this, e);
+		repaint();
 	}
 	
-	/// 마우스 버튼에서 손을 뗐을 때, 이벤트 처리 메서드
-
+	// 마우스 버튼에서 손을 뗐을 때, 이벤트 처리 메서드
 	@Override
 	public void mouseReleased(MouseEvent e)
 	{
-		Command command = new MouseReleasedCommand(e);
-		command.execute();
+		currentToolMode.getToolEventHandler().onMouseReleased(this, e);
+		repaint();
 	}
-
-	/// 커맨드 실행
-
-	public void executeCommand(Command command) {
-		command.execute();
-		commandHistory.push(command);
-	}
-
-	/// 커맨드 되돌리기
-
-	public void undo()
-	{
-		if(!commandHistory.isEmpty())
-		{
-			Command lastCommand = commandHistory.pop();
-			lastCommand.undo();
-			repaint();
-		}
-	}
-
-	/// 컴포넌트 그리기
-
+	
 	@Override
 	protected void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
 		
 		// 모든 컴포넌트 그리기
-		composite.draw(g);
+		for (Component component : components) {
+			component.draw(g);
+		}
 		
 		g.setColor(Color.BLACK);
 		
-		selectedComposite.drawBounds(g);
+		for (Component comp : selectedComponents) {
+			Rectangle bounds = comp.getBounds();
+			g.drawRect(bounds.x - 2, bounds.y - 2, bounds.width + 4, bounds.height + 4);
+
+			// 크기 조절 핸들 표시
+			g.fillRect(bounds.x + bounds.width, bounds.y + bounds.height, 10, 10);
+		}
 	}
 	
 	@Override public void mouseClicked(MouseEvent e) {}

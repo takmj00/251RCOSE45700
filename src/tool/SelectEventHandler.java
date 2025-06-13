@@ -1,11 +1,11 @@
 package tool;
 
 import component.Component;
-import component.Composite;
 import panel.canvas.CanvasPanel;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class SelectEventHandler implements ToolEventHandler
 {
@@ -18,7 +18,7 @@ public class SelectEventHandler implements ToolEventHandler
     private Integer resizingStartY;         // 크기 조절을 시작한 Y 좌표
 
     // 싱글톤
-    public static SelectEventHandler getInstance() { return SingleInstanceHolder.INSTANCE; }
+    public static SelectEventHandler getInstance() { return SelectEventHandler.SingleInstanceHolder.INSTANCE; }
     private static class SingleInstanceHolder { private static final SelectEventHandler INSTANCE = new SelectEventHandler(); }
     private SelectEventHandler() {}
 
@@ -36,13 +36,13 @@ public class SelectEventHandler implements ToolEventHandler
         boolean found = false;
 
         // 선택된 컴포넌트 리스트
-        Composite selectedComposite = canvasPanel.getSelectedComponentList();
+        List<Component> selectedComponents = canvasPanel.getSelectedComponentList();
 
         // 먼저, 현재 하나의 컴포넌트가 선택된 상태이고, 크기 조절 버튼을 눌렀는지 확인
-        if (selectedComposite.size() == 1)
+        if (selectedComponents.size() == 1)
         {
             // 선택된 컴포넌트
-            Component component = selectedComposite.get(0);
+            Component component = selectedComponents.getFirst();
 
             // 컴포넌트 경계선
             Rectangle bounds = component.getBounds();
@@ -70,29 +70,29 @@ public class SelectEventHandler implements ToolEventHandler
         if(!found)
         {
             // 전체 컴포넌트 리스트
-            Composite composite = canvasPanel.getComponentList();
+            List<Component> components = canvasPanel.getComponentList();
 
-            for(int i = composite.size() - 1; i >= 0; i--)
+            for(int i = components.size() - 1; i >= 0; i--)
             {
-                Component component = composite.get(i);
+                Component component = components.get(i);
 
                 if(component.contains(e.getPoint()))
                 {
                     found = true;
 
                     // 이미 선택한 컴포넌트일 경우 아무 처리도 하지 않고 종료
-                    if(selectedComposite.contains(component))
+                    if(selectedComponents.contains(component))
                         break;
 
                     // Ctrl 키가 눌리지 않았으면 단일 선택으로 처리
                     if (!ctrlDown) {
-                        selectedComposite.clear();
+                        selectedComponents.clear();
                     }
 
                     // 이미 선택된 컴포넌트가 아니라면 선택
-                    if (!selectedComposite.contains(component))
+                    if (!selectedComponents.contains(component))
                     {
-                        selectedComposite.add(component);
+                        selectedComponents.add(component);
                         component.enableEditing(canvasPanel);
 
                         canvasPanel.notifyDisplayProperty();
@@ -105,7 +105,7 @@ public class SelectEventHandler implements ToolEventHandler
 
         // 아무것도 hit 되지 않았을 경우 선택 초기화
         if (!found) {
-            selectedComposite.clear();
+            selectedComponents.clear();
         }
     }
 
@@ -113,10 +113,10 @@ public class SelectEventHandler implements ToolEventHandler
     public void onMouseDragged(CanvasPanel canvasPanel, MouseEvent e)
     {
         // 선택된 컴포넌트 리스트
-        Composite selectedComposite = canvasPanel.getSelectedComponentList();
+        List<Component> selectedComponents = canvasPanel.getSelectedComponentList();
 
         // 컴포넌트 크기 변경
-        if(isResizing && resizingComponent != null)
+        if (isResizing && resizingComponent != null)
         {
             int newWidth = Math.max(10, resizingComponent.getWidth() + (e.getX() - resizingStartX));
             int newHeight = Math.max(10, resizingComponent.getHeight() + (e.getY() - resizingStartY));
@@ -130,9 +130,9 @@ public class SelectEventHandler implements ToolEventHandler
             canvasPanel.notifyDisplayProperty();
         }
         // 컴포넌트 위치 변경
-        else if(!selectedComposite.isEmpty())
+        else if (!selectedComponents.isEmpty())
         {
-            for (Component component : selectedComposite.getChildren())
+            for (Component component : selectedComponents)
             {
                 if(x != null && y != null)
                 {
